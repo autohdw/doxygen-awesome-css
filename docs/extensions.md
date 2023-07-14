@@ -19,7 +19,7 @@ This is how you can create the default template with Doxygen:
 
 [More details on header customization](https://www.doxygen.nl/manual/customize.html#minor_tweaks_header_css)
 
-## Dark Mode Toggle
+## Dark Mode Toggle {#extension-dark-mode-toggle}
 
 Adds a button next to the search bar to enable and disable the dark theme variant manually:
 
@@ -63,9 +63,7 @@ DoxygenAwesomeDarkModeToggle.darkModeIcon = `<svg xmlns="http://www.w3.org/2000/
 All customizations must be applied before calling `DoxygenAwesomeDarkModeToggle.init()`!
 
 
-## Fragment Copy Button
-
-***This feature is experimental!***
+## Fragment Copy Button {#extension-copy-button}
 
 Shows a copy button when the user hovers over a code fragment:
 
@@ -105,9 +103,7 @@ DoxygenAwesomeFragmentCopyButton.successIcon = `<svg ...>`
 
 All customizations must be applied before calling `DoxygenAwesomeDarkModeToggle.init()`!
 
-## Paragraph Linking
-
-***This feature is experimental!***
+## Paragraph Linking {#extension-para}
 
 Provides a button on hover behind every headline to allow easy creation of a permanent link to the headline:
 
@@ -148,7 +144,7 @@ DoxygenAwesomeParagraphLink.icon = "¶"
 
 All customizations must be applied before calling `DoxygenAwesomeParagraphLink.init()`!
 
-## Interactive TOC
+## Interactive TOC {#extension-toc}
 
 On large screens the Table of Contents (TOC) is anchored on the top right of the page. This extension visualizes the reading progress by dynamically highlighting the currently active section.
 
@@ -186,6 +182,52 @@ DoxygenAwesomeInteractiveToc.topOffset = 45
 Hiding the TOC on small screens can be disabled. It is still interactive and can be hidden by the user but will now be open by default:
 ```js
 DoxygenAwesomeInteractiveToc.hideMobileMenu = false
+```
+
+## Tabs {#extension-tabs}
+
+@note Experimental feature! Please report bugs [here](https://github.com/jothepro/doxygen-awesome-css/issues).
+
+
+This extension allows to arrange list content in tabs:
+
+<div class="tabbed">
+
+- <span class="tab-title">Tab 1</span> This is the content of tab 1
+- <span class="tab-title">Tab 2</span> This is the content of tab 2
+
+</div>
+
+
+### Installation
+
+1. Add the required resources in your `Doxyfile`:
+   - **HTML_EXTRA_FILES:** `doxygen-awesome-tabs.js`
+2. In the `header.html` template, include `doxygen-awesome-tabs.js` at the end of the `<head>` and then initialize it:
+    ```html
+   <html>
+       <head>
+           <!-- ... other metadata & script includes ... -->
+           <script type="text/javascript" src="$relpath^doxygen-awesome-tabs.js"></script>
+           <script type="text/javascript">
+               DoxygenAwesomeTabs.init()
+           </script>
+       </head>
+       <body>
+    ```
+
+### Usage
+
+Each list that is supposed to be displayed as tabs has to be wrapped with the `tabbed` CSS class.
+Each item in the list must start with an element that has the class `tab-title`. It will then be used as tab title.
+
+```md
+<div class="tabbed">
+
+- <span class="tab-title">Tab 1</span> This is the content of tab 1
+- <span class="tab-title">Tab 2</span> This is the content of tab 2
+
+</div>
 ```
 
 <span class="next_section_button">

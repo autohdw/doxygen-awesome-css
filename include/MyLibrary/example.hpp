@@ -61,6 +61,22 @@ public:
      *     <li>Item 2
      *   </ul>
      * </table>
+     * 
+     * A table can be centered with the `<center>` html tag:
+     * <center>
+     * | Foo         | Bar            | Baz                       | FooBar      |
+     * |-------------|----------------|---------------------------|-------------|
+     * | Lorem imsum | dolor sit amet | cenectetur adipisici elit | At vero eos |
+     * </center>
+     *
+     * Embedded Graphviz graphs support dark mode and can be scrolled once they get too wide:
+     * \dot Graphviz with a caption
+     *  digraph example {
+     *      node [fontsize="12"];
+     *      rankdir="LR"
+     *      a -> b -> c -> d -> e -> f -> g -> h -> i -> j -> k;
+     *  }
+     *  \enddot
      *
      * ## Lists
      *
@@ -85,7 +101,7 @@ public:
      * ## Code block
      *
      * ```cpp
-     * auto x = "code within md fences (```)";
+     * auto x = "code within md fences";
      * ```
      *
      * @code{.cpp}
@@ -94,7 +110,6 @@ public:
      *    auto example = std::make_shared<Example>(5);
      *    example->test("test");
      * }
-     * 
      * @endcode
      *
      *     // code within indented code block
